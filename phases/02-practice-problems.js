@@ -31,6 +31,26 @@ function anagrams(str1, str2) {
 
 
 function commonElements(arr1, arr2) {
+  let obj1 = {};
+  let obj2 = {};
+
+  let both = arr1.concat(arr2);
+
+  for(let ele of arr1) {
+    if(!obj1[ele]) {
+      obj1[ele] = 1;
+    } else {
+      obj1[ele] += 1;
+    }
+  }
+
+  for(let ele of arr2) {
+    if(!obj2[ele]) {
+      obj2[ele] = 1;
+    } else {
+      obj2[ele] += 1;
+    }
+  }
 
 }
 

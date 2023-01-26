@@ -66,16 +66,16 @@ class HashTable { // get O(1), set O(1), deleteKey O(1)
 
 
   resize() {
-    this.count = 0
-  this.capacity*=2;//doulbe the cap
-  let temp = this.data; // place holder
-  this.data = new Array (this.capacity).fill(null) // new empty double sized array
-  for(let obj of temp){
-    let curr = obj
-    while(curr){
-      this.insert(curr.key,curr.value)
-      curr = curr.next
-    }
+    this.count = 0;
+    this.capacity*=2;//double the cap
+    let temp = this.data; // place holder
+    this.data = new Array (this.capacity).fill(null); // new empty double sized array
+    for(let obj of temp){
+      let curr = obj;
+      while(curr){
+        this.insert(curr.key,curr.value)
+        curr = curr.next;
+      }
     }
   }
 
