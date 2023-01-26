@@ -81,7 +81,23 @@ class HashTable { // get O(1), set O(1), deleteKey O(1)
 
 
   delete(key) {
-
+    let index = this.hashMod(key);
+    let curr = this.data[index];
+    let prev;
+    while(curr && curr.key !== key) {
+      prev = curr;
+      curr = curr.next;
+    }
+    if(curr) {
+      if(prev) {
+        prev.next = curr.next;
+      } else {
+        this.data[index] = curr.next;
+      }
+      this.count--;
+    } else {
+      return 'Key not found';
+    }
   }
 }
 
