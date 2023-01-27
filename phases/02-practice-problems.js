@@ -78,7 +78,7 @@ function duplicate(arr) {
 function twoSum(nums, target){
   let hashTable = {};
   for (let num of nums){
-      if (hashTable[target - num]) {
+      if (hashTable[target - num]){
           return true;
       }
       hashTable[num] = true;
